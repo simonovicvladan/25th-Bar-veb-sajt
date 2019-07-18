@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="sr">
+    
+    <head>
+        <title>25th Bar | Gde smo ?</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Vladan Simonović, Milica Bogdanović, Jelisaveta Sapsaj">
+        <meta name="description" content="25th Bar je kafic na 25.Maju na Dorcolu.">
+        <meta name="keywords" content="25 25th 25bar 25thbar 25kafic">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    </head>
+    
+    <body>
+        
+       <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="pocetna.html"><img id="logo" src="img/logo.jpg" ></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">O nama</a></li>
+                    <li class="active"><a href="#">Gde smo ?</a></li>
+                    <li><a href="galerija.html">Galerija</a></li>
+                    <li><a href="meni.html">Meni</a></li>
+                    <li><a href="dogadjaji.html">Događaji / Najave</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <div id="map"></div>
+    <!-- Skripta za pokretanje mape i setovanje polozaja -->
+    <script>
+        function initMap() {
+        var polozaj = {lat: 44.829663, lng: 20.457596 };
+        var mapa = new   google.maps.Map(document.getElementById('map'), {
+              zoom: 14,
+              center: polozaj
+            });
+        var marker = new google.maps.Marker({
+        position: polozaj,
+        map: mapa
+        });
+        }
+    </script>
+    <!-- Odavde se skida mapa sa google api-a -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdeKtFJaG1LBhnT2m1TyxGuKjy8lvzB5c&callback=initMap">
+    </script>
+    
+        
+    <footer class="container-fluid text-center">
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>Kontaktirajte nas!</h3>
+                <hr>
+                <h4>Tadeuška Košćuška 63, Beograd, Srbija</h4>
+                <h4>Radno vreme</h4>
+                <p>Ned-Sre: 10h-01h</p>
+                <p>Čet-Sub: 10h-04h</p>             
+                <h4>+381658443096</h4>
+            </div>
+            <div class="col-sm-4">
+                <br>
+                <br>
+                <a href="https://www.facebook.com/BAR25th/" target="_blank" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-google"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+                <a href="https://www.instagram.com/bar25th/" target="_blank" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-twitter"></a>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail center well well-sm text-center">
+                <h2 class="akcija">Akcijske ponude!</h2>
+                
+                <p class="akcijskaponuda">Saznajte više o promocijama i događajima kod nas!</p>
+                
+                <form name="emailForma" action="" method="post"  onsubmit="potvrdiMail()">
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="fa fa-envelope"></i>
+                      </span>
+                      <input name="eMail"class="form-control" type="email" placeholder="Unesite e-mail...">
+                    </div>
+                    <input type="submit" value="Prijavi se" class="btn btn-large btn-primary">
+              </form>
+            </div>    
+            </div>
+        </div>
+    </footer>
+        
+    <!-- Skripta za formu za mail-->
+    <script type="text/javascript">
+        function potvrdiMail() {
+            // Promenljiva x uzima vrednost koju unese korisnik u polje tipa email 
+            var x =document.forms["emailForma"]["eMail"].value;
+            if (x==null || x=="") { // Provera da li je korisnik uneo neki tekst
+                alert("Niste uneli e-mail. Pokušajte ponovo!");
+            }
+            else {
+                alert("Uspešno ste se prijavili za akcijske ponude!");
+            }   
+       }
+     </script>
+
+    </body>        
+    
+</html>
