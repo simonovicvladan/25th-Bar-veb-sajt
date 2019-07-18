@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.prvi_red {
+    width: 20%;
+    float: left;
+    margin: 2%;
+}
+
+img:hover {
+    opacity: 0.8;
+}
+
+@media screen and(max-width: 768px) {
+    .prvi_red {
+        width: 48%;
+        margin: 1%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .prvi_red {     
+        width: 98%;
+        margin: 1%;
+    }
+}
